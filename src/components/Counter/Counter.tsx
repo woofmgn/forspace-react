@@ -1,11 +1,11 @@
 import { useState } from "react";
-import "./counter.scss";
+import styles from "./counter.module.scss";
 
 export const Counter = () => {
   const [count, setCount] = useState("");
   return (
-    <div className="counter">
-      <h1 className="hui"></h1>
+    <div className={styles.hui}>
+      <h1 className={styles.hui}>hui</h1>
     </div>
   );
 };
