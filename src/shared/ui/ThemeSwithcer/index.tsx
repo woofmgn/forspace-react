@@ -1,3 +1,3 @@
-import { ThemeSwithcer } from "./ui/ThemeSwithcer";
+import { ThemeSwithcer } from './ui/ThemeSwithcer';
 
 export { ThemeSwithcer };
