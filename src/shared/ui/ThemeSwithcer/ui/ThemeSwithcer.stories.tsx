@@ -15,7 +15,9 @@ export default {
 } as ComponentMeta<typeof ThemeSwithcer>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const Template: ComponentStory<typeof ThemeSwithcer> = (args) => <ThemeSwithcer {...args} />;
+const Template: ComponentStory<typeof ThemeSwithcer> = (args) => (
+  <ThemeSwithcer {...args} />
+);
 
 export const Normal = Template.bind({});
 

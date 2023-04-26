@@ -4,11 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'plugin:i18next/recommended',
-  ],
+  extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -17,13 +13,9 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'i18next',
-  ],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
-    'linebreak-style': ['error', 'windows'],
+    'linebreak-style': ['error', 'unix'],
     'arrow-body-style': ['off'],
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
@@ -35,10 +27,7 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': [
-      'warn',
-      { argsIgnorePattern: '^_' },
-    ],
+    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     'react/require-default-props': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': 'warn',

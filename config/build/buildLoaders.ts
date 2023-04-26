@@ -25,10 +25,5 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 
   const cssLoaders = buildCssLoader(isDev);
 
-  return [
-    fileLoader,
-    svgLoader,
-    typescryptLoader,
-    cssLoaders,
-  ];
+  return [fileLoader, svgLoader, typescryptLoader, cssLoaders];
 }
