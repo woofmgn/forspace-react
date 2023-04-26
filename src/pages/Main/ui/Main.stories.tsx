@@ -12,6 +12,7 @@ export default {
 } as ComponentMeta<typeof Main>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
+// @ts-ignore
 const Template: ComponentStory<typeof Main> = (args) => <Main {...args} />;
 
 export const Normal = Template.bind({});
