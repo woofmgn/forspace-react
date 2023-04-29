@@ -19,6 +19,7 @@ module.exports = {
     'arrow-body-style': ['off'],
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
+    'rest-spread-spacing': ['error', 'never'],
     indent: [2, 2],
     'react/jsx-filename-extension': [
       2,
@@ -30,7 +31,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     'react/require-default-props': 'off',
     'react/react-in-jsx-scope': 'off',
-    'react/jsx-props-no-spreading': 'warn',
+    'react/jsx-props-no-spreading': 'off',
     'react/function-component-definition': 'off',
     'no-shadow': 'off',
     'import/extensions': 'off',
