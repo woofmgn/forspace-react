@@ -13,7 +13,12 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'i18next',
+    'react-hooks',
+  ],
   rules: {
     'linebreak-style': ['error', 'unix'],
     'arrow-body-style': ['off'],
@@ -49,15 +54,18 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 'off',
     'no-param-reassign': 'off',
     'no-undef': 'off',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
   },
   globals: {
     __IS_DEV__: true,
   },
   overrides: [
     {
-      files: ['**/src/**/*.test.{ts,tsx}'],
+      files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
       rules: {
         'i18next/no-literal-string': 'off',
+        'max-len': 'off',
       },
     },
   ],
