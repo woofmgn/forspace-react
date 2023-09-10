@@ -42,12 +42,6 @@ export const Modal: FC<ModalProps> = ({
     evt.stopPropagation();
   };
 
-  const onKeyDownEsc = (evt: KeyboardEvent) => {
-    if (evt.key === 'Escape') {
-      closeHandler();
-    }
-  };
-
   useEffect(() => {
     const onKeyDownEsc = (evt: KeyboardEvent) => {
       if (evt.key === 'Escape') {
