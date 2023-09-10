@@ -1,11 +1,13 @@
 /* eslint-disable i18next/no-literal-string */
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'shared/ui/Button/Button';
+import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 import { counterAction } from '../model/slice/counterSlice';
 
 export const Counter = () => {
   const dispatch = useDispatch();
   // const counterValue = useSelector((state: StateSchema) => state.counter);
+  const counterValue = useSelector(getCounterValue);
 
   const increment = () => {
     dispatch(counterAction.increment());
@@ -17,11 +19,11 @@ export const Counter = () => {
 
   return (
     <div>
-      <h1>value = </h1>
-      <Button onClick={increment}>
+      <h1 data-testid="value-title">{`value = ${counterValue}`}</h1>
+      <Button data-testid="increment-btn" onClick={increment}>
         increment
       </Button>
-      <Button onClick={decrement}>
+      <Button data-testid="decrement-btn" onClick={decrement}>
         decrement
       </Button>
     </div>
