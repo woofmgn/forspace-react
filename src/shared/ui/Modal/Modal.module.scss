@@ -21,8 +21,8 @@
 .content {
   padding: 20px;
   border-radius: 12px;
-  // background: var(--bg-color); найти почему переменная не срабатывает глобально
-  background: #e8e8ea;
+  background: var(--bg-color);
+  color: var(--primary-color);
   transform: scale(0.5);
   transition: 0.3s transform;
   max-width: 60%;

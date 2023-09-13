@@ -1,9 +1,6 @@
-import {
-  FC, ReactNode,
-  useCallback,
-  useEffect, useRef,
-  useState,
-} from 'react';
+/* eslint-disable object-curly-newline */
+import { useTheme } from 'app/providers/ThemeProvider';
+import { FC, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
@@ -18,15 +15,14 @@ interface ModalProps {
 const ANIMATION_DELAY = 300;
 
 export const Modal: FC<ModalProps> = ({
-  className, children, isOpen, onClose,
+  className,
+  children,
+  isOpen,
+  onClose,
 }) => {
   const [isClosing, setIsClosing] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
-
-  const mods: Record<string, boolean> = {
-    [cls.opened]: isOpen,
-    [cls.isClosing]: isClosing,
-  };
+  const { theme } = useTheme();
 
   const closeHandler = useCallback(() => {
     if (onClose) {
@@ -40,6 +36,11 @@ export const Modal: FC<ModalProps> = ({
 
   const onContentClick = (evt: React.MouseEvent) => {
     evt.stopPropagation();
+  };
+
+  const mods: Record<string, boolean> = {
+    [cls.opened]: isOpen,
+    [cls.isClosing]: isClosing,
   };
 
   useEffect(() => {
@@ -61,7 +62,9 @@ export const Modal: FC<ModalProps> = ({
 
   return (
     <Portal>
-      <div className={classNames(cls.Modal, mods, [className])}>
+      <div
+        className={classNames(cls.Modal, mods, [className, theme, 'app_modal'])}
+      >
         <div className={cls.overlay} onClick={closeHandler}>
           <div
             className={classNames(cls.content, { [cls.contentOpened]: isOpen })}
