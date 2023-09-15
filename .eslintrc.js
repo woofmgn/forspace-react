@@ -13,12 +13,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'i18next',
-    'react-hooks',
-  ],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
   rules: {
     'linebreak-style': ['error', 'unix'],
     'arrow-body-style': ['off'],
@@ -56,6 +51,7 @@ module.exports = {
     'no-undef': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'no-multiple-empty-lines': ['error', { max: 2 }],
   },
   globals: {
     __IS_DEV__: true,
