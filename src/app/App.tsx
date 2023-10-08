@@ -5,13 +5,13 @@ import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 
 import { userAction } from 'entities/User';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useTheme } from './providers/ThemeProvider';
 import { AppRouter } from './providers/router';
 
 export const App = () => {
   const { theme } = useTheme();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(userAction.initAuthData());
